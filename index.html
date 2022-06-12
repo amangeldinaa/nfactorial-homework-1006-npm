@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+</head>
+
+<script>
+    function setWhiteTheme() {
+        localStorage.setItem("theme","light");
+        const root = document.getElementById("mainContainer");
+        root.className = "light";
+    }
+    const setCookie = () => {
+        document.cookie = "username=aruzhan; expires=Tue, 10-Jun-2022 09:00:00 UTC";
+    }
+    function setDarkTheme() {
+        localStorage.setItem("theme","dark");
+        const root = document.getElementById("mainContainer");
+        root.className = "dark";
+    }
+    function getValue() {
+        const theme = localStorage.getItem("theme");
+        const root = document.getElementById("mainContainer");
+        root.className = theme;
+    }
+</script>
+
+<body onload="getValue()">
+    <div id="header"><h2>Assignment 7</h2></div>
+
+    <div id="wrap">
+        <div id="window1" class="window1" ><br><br><br>
+            <h2 style="margin-left: 30px;">Home</h2><br>
+            <h2 style="margin-left: 30px;">Mad Libs</h2><br>
+            <a href=index2.html><h2 style="margin-left: 30px;">Tom Thumb</h2></a><br>
+        </div>
+    
+        <div id="mainContainer" class="window2">
+            <h1>
+                <button onclick="setWhiteTheme()">
+                    Set light theme 
+                </button>
+                <button onclick="setDarkTheme()">
+                    Set dark theme 
+                </button>
+                <button onclick="setCookie()">
+                    Set cookie 
+                </button>
+            </h1>
+
+            <h1 class="window-banner">Mad Libs</h1>
+
+            <div class="container">
+                <form action="">
+                    Person Name: <input class="input" type="text" name="user" id="inp1"><br>
+                    Character: <input class="input" type="text" name="character" id="inp2"><br>
+                    Adverb: <input class="input" type="text" name="adverb" id="inp3"><br>
+                    Adjective: <input class="input" type="text" name="adjective" id="inp4"><br><br><br>
+                    <button type="button" id="resbutton">Tell Story</button>
+                </form>
+            </div>
+
+            <div class="container" id="story">
+                <div id="result" ></div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
